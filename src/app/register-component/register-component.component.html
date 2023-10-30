@@ -1,0 +1,55 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!doctype html>
+<html lang="en">
+<app-header-component></app-header-component>
+
+<body>
+  <main>
+
+    <section class="py-5 text-center container">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      
+      <div class="mb-3 form-group">
+        <label for="formGroupExampleInput" class="form-label">E-mail:</label>
+        <input type="text" class="form-control" id="email" placeholder="E-mail" formControlName="email" [class.is-invalid]="email?.invalid && email?.touched">
+      </div>
+      <div *ngIf="(email?.invalid && email?.touched) || email?.dirty">
+        <small *ngIf="email?.errors?.['required']" class="text-danger">Primary email is required</small>
+        <!--question mark(?) is a safe navigation operator-->
+        <small *ngIf="email?.errors?.['pattern']" class="text-danger">Please provide a valid email address</small>
+      </div>
+      <div class="mb-3 form-group">
+        <label for="formGroupExampleInput" class="form-label">Wachtwoord:</label>
+        <input type="password" class="form-control" id="wachtwoord" placeholder="Wachtwoord" formControlName="wachtwoord" [class.is-invalid]="form.get('wachtwoord')?.invalid && form.get('wachtwoord')?.touched">
+        
+      </div>
+      <div class="mb-3 form-group">
+        <label for="formGroupExampleInput" class="form-label">Herhaal wachtwoord:</label>
+        <input type="password" class="form-control" id="herhaalwachtwoord" placeholder="Herhaal wachtwoord" formControlName="herhaalwachtwoord" [class.is-invalid]="form.get('herhaalwachtwoord')?.invalid && form.get('herhaalwachtwoord')?.touched"> 
+      </div>
+      <div class="d-grid gap-2">
+        <button type="button" class="btn btn-primary" type="submit">Registreer</button>
+        <button type="button" class="btn btn-secondary" routerLink="/homeComponent"
+          routerLinkActive="active" >Terug</button>
+      </div>
+      <div class="mb-3">
+        <p class="text-left">Al een account? <a routerLink="/loginlogoutComponent">Login</a></p>
+      </div>
+    
+    </form>
+    </section>
+  </main>
+</body>
+<app-footer-component></app-footer-component>
+
+</html>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<router-outlet></router-outlet>

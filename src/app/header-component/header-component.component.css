@@ -1,0 +1,40 @@
+
+p {
+    margin: 0;
+  }
+  
+
+  ul li{
+    text-align: center;
+    background-color:grey;
+    border-radius: 5px;
+    text-decoration: none;
+    float:left;
+    margin-left: 180px;
+  }
+
+  ul li a{
+    text-decoration:none;
+    color:black;
+    display:block;
+    text-align:center;
+    width:200px;
+    padding: 20px;
+  }
+
+  ul li a:hover{
+    text-decoration:none;
+    color:white;
+  }
+
+
+  .justify-content-center{
+    margin:0 auto;
+  list-style:none;
+  margin-left: 0px;
+  }
+
+  .navbar-brand{
+    float: left;
+    text-align: center;
+  }

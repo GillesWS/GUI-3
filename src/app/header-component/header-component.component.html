@@ -1,0 +1,50 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Project GUI</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
+
+</head>
+    <!-- Bootstrap core CSS -->
+<link href="/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<meta name="theme-color" content="#7952b3">   
+
+<header>
+  
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <div class="navbar-brand">
+        <img class="rounded float-left" src="assets/doIT.PNG" width="150" height="100" routerLink="/homeComponent" routerLinkActive="active">
+        </div>
+        <ul class="nav justify-content-center">
+          
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/homeComponent" routerLinkActive="active">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/lijstenComponent" routerLinkActive="active">Lijsten</a>
+          </li>
+        <ng-template [ngIf]="authService.getUid() == '9GviHKDI9sf14oNN7Vo0VK6T5tS2'">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/adminPageComponent" routerLinkActive="active">Admin</a>
+          </li>
+        </ng-template>
+        </ul>
+        <ng-template [ngIf]="authService.isLoggedIn()">
+        <div class="navbar-brand hover-overlay bg-image">
+          <img class="rounded float-right" src="assets/logout.png" width="70" height="70" routerLink="/loginComponent" routerLinkActive="active" (click)="onLogout()">
+        </div>
+      </ng-template>
+      <ng-template [ngIf]="authService.isLoggedOut()">
+        <div class="navbar-brand hover-overlay bg-image">
+          <img class="rounded float-right" src="assets/user.png" width="70" height="70" routerLink="/loginComponent" routerLinkActive="active">
+        </div>
+      </ng-template>
+      </div>
+    </div>
+  </header>
+  
